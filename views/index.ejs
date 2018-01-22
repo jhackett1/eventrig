@@ -1,0 +1,79 @@
+<% include header %>
+
+    <!-- Hero section -->
+    <section id="hero">
+      <h1>Valentines' Magical Extravaganza</h1>
+      <h2>No Valentine’s Day plans? No Problem! Come on down to the Civil Service Club for an evening of music, merriment and magic!</h2>
+      <a href="#" class="btn">Buy tickets</a>
+    </section>
+
+    <!-- First sell -->
+    <section class="sell">
+      <aside style="background-image: url('/img/nick.jpg')">
+      </aside>
+      <aside>
+        <h3>About the event</h3>
+        <p>The Tootie Foodies FUND Group present our Magical Extravaganza– with extra special guest, magic circle magician Nick Stein!</p>
+        <p>We’re shaking things up this V-Day, and proving that you don’t need a date to still have a magical evening, with a magic show that will blow you away!</p>
+      </aside>
+    </section>
+
+    <!-- Second sell -->
+    <section class="sell">
+      <aside style="background-image: url('/img/trussell.jpg')">
+      </aside>
+      <aside>
+        <h3>For the Trussell Trust</h3>
+        <p>We’re shaking things up this V-Day, and proving that you don’t need a date to still have a magical evening, with a magic show that will blow you away!</p>
+      </aside>
+    </section>
+
+    <!-- Third sell -->
+    <section class="sell">
+      <aside style="background-image: url('/img/club.jpg')">
+      </aside>
+      <aside>
+        <h3>About the venue</h3>
+        <p>We’re shaking things up this V-Day, and proving that you don’t need a date to still have a magical evening, with a magic show that will blow you away!</p>
+      </aside>
+    </section>
+
+    <!-- Buy tickets and share -->
+    <section id="ticket">
+      <h3>Buy tickets now</h3>
+      <p>Tickets are £15 and can be purchased here. (insert Eventbrite link).</p>
+      <p>It’s going to be a fantastic night and we look forward to seeing you there!</p>
+
+      <form action="/charge" method="POST" id="payment-form">
+        <div class="form-row">
+          <label for="card-element">
+            Credit or debit card
+          </label>
+          <div id="card-element">
+            <!-- a Stripe Element will be inserted here. -->
+          </div>
+          <!-- Used to display Element errors -->
+          <div id="card-errors" role="alert"></div>
+        </div>
+        <button>Submit Payment</button>
+      </form>
+
+      <%# <form action="/charge" method="POST">
+        <label for="quantity">Number of tickets</label></label>
+        <input name="quantity" type="number" max="10" min="1" value="1"/></input>
+        <script
+          src="https://checkout.stripe.com/checkout.js"
+          class="stripe-button"
+          data-key="pk_test_6pRNASCoBOKtIshFeQd4XMUh"
+          data-image="/img/hero.jpg"
+          data-name="Tootie Foodies"
+          data-description="1 ticket (£20.00)"
+          data-amount="2000">
+        </script>
+      </form> %>
+
+      <ul class="social">
+      </ul>
+    </section>
+
+<% include footer %>
