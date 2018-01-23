@@ -9,9 +9,9 @@
 
     <!-- First sell -->
     <section class="sell">
-      <aside style="background-image: url('/img/nick.jpg')">
+      <aside class="image" style="background-image: url('/img/nick.jpg')">
       </aside>
-      <aside>
+      <aside class="text">
         <h3>About the event</h3>
         <p>The Tootie Foodies FUND Group present our Magical Extravaganza– with extra special guest, magic circle magician Nick Stein!</p>
         <p>We’re shaking things up this V-Day, and proving that you don’t need a date to still have a magical evening, with a magic show that will blow you away!</p>
@@ -20,9 +20,9 @@
 
     <!-- Second sell -->
     <section class="sell">
-      <aside style="background-image: url('/img/trussell.jpg')">
+      <aside class="image" style="background-image: url('/img/trussell.jpg')">
       </aside>
-      <aside>
+      <aside class="text">
         <h3>For the Trussell Trust</h3>
         <p>We’re shaking things up this V-Day, and proving that you don’t need a date to still have a magical evening, with a magic show that will blow you away!</p>
       </aside>
@@ -30,45 +30,75 @@
 
     <!-- Third sell -->
     <section class="sell">
-      <aside style="background-image: url('/img/club.jpg')">
+      <aside class="image" style="background-image: url('/img/club.jpg')">
       </aside>
-      <aside>
+      <aside class="text">
         <h3>About the venue</h3>
         <p>We’re shaking things up this V-Day, and proving that you don’t need a date to still have a magical evening, with a magic show that will blow you away!</p>
       </aside>
     </section>
 
     <!-- Buy tickets and share -->
-    <section id="ticket">
+    <section id="tickets">
       <h3>Buy tickets now</h3>
       <p>Tickets are £15 and can be purchased here. (insert Eventbrite link).</p>
       <p>It’s going to be a fantastic night and we look forward to seeing you there!</p>
 
-      <form action="/charge" method="POST" id="payment-form">
-        <div class="form-row">
-          <label for="card-element">
-            Credit or debit card
-          </label>
-          <div id="card-element">
-            <!-- a Stripe Element will be inserted here. -->
-          </div>
-          <!-- Used to display Element errors -->
-          <div id="card-errors" role="alert"></div>
-        </div>
-        <button>Submit Payment</button>
-      </form>
 
-      <%# <form action="/charge" method="POST">
+      <button id="customButton">Purchase</button>
+
+      <script>
+      var handler = StripeCheckout.configure({
+        key: 'pk_test_ddtNFXJaPXpOoFDYAcyurEEd',
+        image: 'https://stripe.com/img/documentation/checkout/marketplace.png',
+        locale: 'auto',
+        // Run this function on checkout completion
+        // Sending token to server
+        token: function(token) {
+          fetch('/checkout', {
+            method: 'POST', // or 'PUT'
+            body: JSON.stringify({
+              stripeToken: token.id,
+              quntity: 1
+            }),
+            headers: new Headers({
+              'Content-Type': 'application/json'
+            })
+          }).then(res => res.json())
+          .catch(error => console.error('Error:', error))
+          .then(response => console.log('Success:', response));
+        }
+      });
+
+      document.getElementById('customButton').addEventListener('click', function(e) {
+        // Open Checkout with further options:
+        handler.open({
+          name: 'smallwins.co.uk',
+          description: '2 widgets',
+          currency: 'gbp',
+          amount: 2000
+        });
+        e.preventDefault();
+      });
+
+      </script>
+
+      <%# <form action="/checkout" method="POST">
+
         <label for="quantity">Number of tickets</label></label>
-        <input name="quantity" type="number" max="10" min="1" value="1"/></input>
+        <input name="quantity" id="quantity" type="number" max="10" min="1" value="1"/></input>
+        <h5>Total <span id="total">£15.00</span></h5>
+
         <script
-          src="https://checkout.stripe.com/checkout.js"
-          class="stripe-button"
-          data-key="pk_test_6pRNASCoBOKtIshFeQd4XMUh"
-          data-image="/img/hero.jpg"
+          src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-key="pk_test_ddtNFXJaPXpOoFDYAcyurEEd"
+          data-currency="GBP"
+          data-amount="1500"
           data-name="Tootie Foodies"
-          data-description="1 ticket (£20.00)"
-          data-amount="2000">
+          data-description="Valentines' Extravaganza ticket(s)"
+          data-image="/img/hero.jpg"
+          data-locale="en"
+        >
         </script>
       </form> %>
 

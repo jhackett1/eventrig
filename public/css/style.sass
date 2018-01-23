@@ -1,9 +1,119 @@
 // Colour scheme
-$green1: rgba(194, 247, 187, 1)
-$greey2: rgba(94, 135, 89, 1)
-$green3: rgba(93, 166, 84, 1)
-$green4: rgba(55, 71, 53, 1)
-$grey1: rgba(234, 247, 232, 1)
-$grey2: #969696
-$grey3: #505050
-$grey4: #2d2d2d
+$dark: rgba(55, 63, 71, 1)
+$light: rgba(240, 247, 244, 1)
+$green1: rgba(162, 227, 196, 1)
+$green2: rgba(120, 192, 145, 1)
+$green3: rgba(110, 144, 117, 1)
+
+// Reset
+*
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+  list-style-type: none
+
+h1, h2, h3, h4, h5
+  font-family: 'Roboto', serif
+
+p
+  font-family: 'Cabin', sans-serif
+
+body
+  // background-color: $grey1
+
+a.btn
+  background-color: $green3
+  color: white
+  padding: 20px
+  font-size: 1.1em
+  display: inline-block
+  font-family: 'Libre Baskeville', sans-serif
+  text-decoration: none
+  border-radius: 2px
+
+section#hero
+  background-image: url('/img/hero.jpg')
+  background-position: center
+  background-size: cover
+  color: white
+  padding: 25px
+  text-align: center
+  min-height: 100vh
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  h1
+    margin-bottom: 15px
+    font-size: 3em
+    max-width: 600px
+  h2
+    font-size: 1.1em
+    max-width: 600px
+  a
+    margin-top: 30px
+
+section.sell
+  aside.image
+    height: 300px
+    background-position: center
+    background-size: cover
+  aside.text
+    padding: 25px
+    background-color: $green2
+    color: white
+    h3
+      font-size: 1.7em
+      // margin-bottom: 7px
+    p
+      margin-top: 12px
+
+section#tickets
+  background-color: $green1
+  color: $dark
+  padding: 25px
+  text-align: center
+  h3
+    font-size: 1.7em
+  p
+    margin-top: 12px
+
+footer
+  background-color: $dark
+  color: $light
+  padding: 25px
+  text-align: center
+  a
+    color: $light
+
+
+@media screen and (min-width: 600px)
+  section.sell
+    display: flex
+    flex-direction: row
+    &:nth-of-type(odd)
+      aside.text
+        text-align: right
+        order: -1
+        background-color: $dark
+    aside
+      width: 50%
+      // flex: 1
+      &.image
+        height: 0
+        padding-bottom: 50%
+      &.text
+        display: flex
+        flex-direction: column
+        justify-content: center
+
+
+@media screen and (min-width: 800px)
+  section#tickets
+    padding: 40px
+  section.sell
+    aside.text
+      padding: 40px
+      h3
+        font-size: 2.5em
+        margin-bottom: 10px

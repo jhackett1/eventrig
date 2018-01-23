@@ -1,0 +1,103 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style-type: none; }
+
+h1, h2, h3, h4, h5 {
+  font-family: "Roboto", serif; }
+
+p {
+  font-family: "Cabin", sans-serif; }
+
+a.btn {
+  background-color: #6e9075;
+  color: white;
+  padding: 20px;
+  font-size: 1.1em;
+  display: inline-block;
+  font-family: "Libre Baskeville", sans-serif;
+  text-decoration: none;
+  border-radius: 2px; }
+
+section#hero {
+  background-image: url("/img/hero.jpg");
+  background-position: center;
+  background-size: cover;
+  color: white;
+  padding: 25px;
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+  section#hero h1 {
+    margin-bottom: 15px;
+    font-size: 3em;
+    max-width: 600px; }
+  section#hero h2 {
+    font-size: 1.1em;
+    max-width: 600px; }
+  section#hero a {
+    margin-top: 30px; }
+
+section.sell aside.image {
+  height: 300px;
+  background-position: center;
+  background-size: cover; }
+section.sell aside.text {
+  padding: 25px;
+  background-color: #78c091;
+  color: white; }
+  section.sell aside.text h3 {
+    font-size: 1.7em; }
+  section.sell aside.text p {
+    margin-top: 12px; }
+
+section#tickets {
+  background-color: #a2e3c4;
+  color: #373f47;
+  padding: 25px;
+  text-align: center; }
+  section#tickets h3 {
+    font-size: 1.7em; }
+  section#tickets p {
+    margin-top: 12px; }
+
+footer {
+  background-color: #373f47;
+  color: #f0f7f4;
+  padding: 25px;
+  text-align: center; }
+  footer a {
+    color: #f0f7f4; }
+
+@media screen and (min-width: 600px) {
+  section.sell {
+    display: flex;
+    flex-direction: row; }
+    section.sell:nth-of-type(odd) aside.text {
+      text-align: right;
+      order: -1;
+      background-color: #373f47; }
+    section.sell aside {
+      width: 50%; }
+      section.sell aside.image {
+        height: 0;
+        padding-bottom: 50%; }
+      section.sell aside.text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center; } }
+@media screen and (min-width: 800px) {
+  section#tickets {
+    padding: 40px; }
+
+  section.sell aside.text {
+    padding: 40px; }
+    section.sell aside.text h3 {
+      font-size: 2.5em;
+      margin-bottom: 10px; } }
+
+/*# sourceMappingURL=style.css.map */

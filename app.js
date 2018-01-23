@@ -6,7 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 // Get routers
-var index = require('./routes/index');
+var routes = require('./routes/routes');
 
 // Initialize express
 var app = express();
@@ -23,7 +23,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Bind URL to router
-app.use('/', index);
+app.use('/', routes);
 
 // Catch 404s
 app.use(function(req, res, next) {
