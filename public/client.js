@@ -15,7 +15,7 @@ document.getElementById('quantity').addEventListener('input', function(e){
 })
 
 // Setup
-var stripe = Stripe('pk_test_ddtNFXJaPXpOoFDYAcyurEEd');
+var stripe = Stripe('pk_live_p8cWlsxseV6zpbdpKCay4pqY');
 var elements = stripe.elements();
 
 // Custom styling can be passed to options when creating an Element.
