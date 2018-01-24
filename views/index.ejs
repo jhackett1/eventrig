@@ -2,19 +2,27 @@
 
     <!-- Hero section -->
     <section id="hero">
-      <h1>Valentines' Magical Extravaganza</h1>
-      <h2>No Valentine’s Day plans? No Problem! Come on down to the Civil Service Club for an evening of music, merriment and magic!</h2>
-      <a href="#" class="btn">Buy tickets</a>
+      <aside class="image" style="background-image: url('/img/nick.jpg')">
+      </aside>
+      <aside class="text">
+        <h2>Tootie Foodies present</h2>
+        <h1>Valentines' Magical Extravaganza</h1>
+        <p>No Valentine’s Day plans? No problem!</p>
+        <p>Come on down to the Civil Service Club for an evening of music, merriment and magic – with extra special guest, magic circle magician Nick Stein!</p>
+        <p>We’re shaking things up this V-Day, and proving that you don’t need a date to still have a magical evening, with a magic show that will blow you away!</p>
+        <a href="#tickets" id="ticket-link" class="btn">Buy tickets</a>
+      </aside>
+
     </section>
 
     <!-- First sell -->
     <section class="sell">
-      <aside class="image" style="background-image: url('/img/nick.jpg')">
+      <aside class="image" style="background-image: url('/img/trussell2.jpg')">
       </aside>
       <aside class="text">
-        <h3>About the event</h3>
-        <p>The Tootie Foodies FUND Group present our Magical Extravaganza– with extra special guest, magic circle magician Nick Stein!</p>
-        <p>We’re shaking things up this V-Day, and proving that you don’t need a date to still have a magical evening, with a magic show that will blow you away!</p>
+        <h3>Also featuring...</h3>
+        <p>Listen up! Literally! We’ll be playing musical bingo, so be sure to listen out for the songs on your card to be in with a chance of winning the grand prize!</p>
+        <p>Plus (as if all that wasn’t enough), you still might not go home empty handed thanks to our amazing raffle prizes!</p>
       </aside>
     </section>
 
@@ -24,7 +32,7 @@
       </aside>
       <aside class="text">
         <h3>For the Trussell Trust</h3>
-        <p>We’re shaking things up this V-Day, and proving that you don’t need a date to still have a magical evening, with a magic show that will blow you away!</p>
+        <p>All of our profits will be going to the Trussell Trust, who run a network of over 400 foodbanks, giving emergency food and support to people in crisis across the UK.</p>
       </aside>
     </section>
 
@@ -34,73 +42,18 @@
       </aside>
       <aside class="text">
         <h3>About the venue</h3>
-        <p>We’re shaking things up this V-Day, and proving that you don’t need a date to still have a magical evening, with a magic show that will blow you away!</p>
+        <p>The evening will be kicking off at 18:00 on Wednesday February 14th at the Civil Service Club, 13 - 15 Great Scotland Yard, London SW1A 2HJ.</p>
       </aside>
     </section>
 
     <!-- Buy tickets and share -->
     <section id="tickets">
       <h3>Buy tickets now</h3>
-      <p>Tickets are £15 and can be purchased here. (insert Eventbrite link).</p>
+      <p>Tickets are £15 and can be purchased right here.</p>
+      <p>Your ticket will also include a buffet dinner, so no need to book that table for one and pretend that your date is “stuck in traffic”.</p>
       <p>It’s going to be a fantastic night and we look forward to seeing you there!</p>
 
-
-      <button id="customButton">Purchase</button>
-
-      <script>
-      var handler = StripeCheckout.configure({
-        key: 'pk_test_ddtNFXJaPXpOoFDYAcyurEEd',
-        image: 'https://stripe.com/img/documentation/checkout/marketplace.png',
-        locale: 'auto',
-        // Run this function on checkout completion
-        // Sending token to server
-        token: function(token) {
-          fetch('/checkout', {
-            method: 'POST', // or 'PUT'
-            body: JSON.stringify({
-              stripeToken: token.id,
-              quntity: 1
-            }),
-            headers: new Headers({
-              'Content-Type': 'application/json'
-            })
-          }).then(res => res.json())
-          .catch(error => console.error('Error:', error))
-          .then(response => console.log('Success:', response));
-        }
-      });
-
-      document.getElementById('customButton').addEventListener('click', function(e) {
-        // Open Checkout with further options:
-        handler.open({
-          name: 'smallwins.co.uk',
-          description: '2 widgets',
-          currency: 'gbp',
-          amount: 2000
-        });
-        e.preventDefault();
-      });
-
-      </script>
-
-      <%# <form action="/checkout" method="POST">
-
-        <label for="quantity">Number of tickets</label></label>
-        <input name="quantity" id="quantity" type="number" max="10" min="1" value="1"/></input>
-        <h5>Total <span id="total">£15.00</span></h5>
-
-        <script
-          src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-          data-key="pk_test_ddtNFXJaPXpOoFDYAcyurEEd"
-          data-currency="GBP"
-          data-amount="1500"
-          data-name="Tootie Foodies"
-          data-description="Valentines' Extravaganza ticket(s)"
-          data-image="/img/hero.jpg"
-          data-locale="en"
-        >
-        </script>
-      </form> %>
+      <% include form %>
 
       <ul class="social">
       </ul>

@@ -1,9 +1,15 @@
 <% include header %>
 
-  <h1>Your order was successful</h1>
-  <p>You have purchased X tickets for our Valentines' Extravaganza!</p>
-  <p>We will send your e-tickets to EMAIL ADDRESS. Please check your spam box if these do not arrive promptly.</p>
-  <p>We've recorded your details, but for speedy entry, please bring your email along to the event.</p>
-  <p>If you have any questions, feel free to contact us on EMAIL ADDRESS.</p>
+<section class="order-status">
+  <div class="inner">
+    <h1>Your order was successful</h1>
+    <h3>Order number <%= charge.metadata.orderNumber %></h3>
+    <p>Payment was successful and your order is now complete.</p>
+    <p>You have been charged <strong>£<%= charge.amount / 100  %>.00 for <%= charge.metadata.quantity %> ticket(s).</strong></p>
+    <p>We will send an email confirmation to at <strong><%= charge.metadata.email %></strong>. Please bring this email to the event with you to guarantee speedy entry.</p>
+    <p>If you have any questions about your order, <a href="mailto:tootiefoodies@gmail.com">email us</a>, quoting your order number.</p>
+    <a href="/" class="btn">Continue home</a>
+  </div>
+</section>
 
 <% include footer %>

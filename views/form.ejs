@@ -1,0 +1,18 @@
+<form action="/checkout" method="post" id="payment-form">
+
+  <label for="quantity">Number of tickets</label><br>
+  <input id="quantity" name="quantity" type="number" min="1" max="10" value="1" required></input><br>
+
+  <label for="email">Your email</label><br>
+  <input id="email" name="email" type="email" required></input><br>
+
+  <label for="card-element">Credit or debit card</label><br>
+  <div id="card-element"></div><br>
+  <div id="card-errors" role="alert"></div><br>
+
+  <p>Total: <span id="total">£15.00</span></p>
+  <button>Buy now</button>
+
+  <span id="info">Secured by <a target="blank" href="https://stripe.com/gb">Stripe</a></span>
+
+</form>

@@ -1,8 +1,13 @@
 <% include header %>
 
-  <h1>Something went wrong</h1>
-  <p>We couldn't complete your order.</p>
-  <p>Please check your payment details and try again.</p>
-  <p>If you continue to have trouble, please contact us on EMAIL ADDRESS.</p>
+<section class="order-status">
+  <div class="inner">
+    <h1>Your order was unsuccessful</h1>
+    <p><%= message %></p>
+    <p>Your order could not be completed and you have not been charged.</p>
+    <p>Please try again later, or try different card details. If you continue to have issues, <a href="mailto:tootiefoodies@gmail.com">email us</a>.</p>
+    <a href="/" class="btn">Continue home</a>
+  </div>
+</section>
 
 <% include footer %>

@@ -1,11 +1,13 @@
-// Colour scheme
-$dark: rgba(55, 63, 71, 1)
-$light: rgba(240, 247, 244, 1)
-$green1: rgba(162, 227, 196, 1)
-$green2: rgba(120, 192, 145, 1)
-$green3: rgba(110, 144, 117, 1)
+$color1: rgba(67, 58, 63, 1)
+$color2: rgba(61, 90, 108, 1)
+$color3: rgba(114, 169, 143, 1)
+$color4: rgba(141, 233, 105, 1)
+$color5: rgba(203, 239, 67, 1)
+$white: #efefef
 
-// Reset
+$h-stack: Rubik, sans-serif
+$p-stack: Abel, sans-serif
+
 *
   margin: 0
   padding: 0
@@ -13,107 +15,244 @@ $green3: rgba(110, 144, 117, 1)
   list-style-type: none
 
 h1, h2, h3, h4, h5
-  font-family: 'Roboto', serif
+  font-family: $h-stack
+  color: $color2
 
 p
-  font-family: 'Cabin', sans-serif
+  font-family: $p-stack
+  color: $color1
 
-body
-  // background-color: $grey1
-
-a.btn
-  background-color: $green3
-  color: white
-  padding: 20px
-  font-size: 1.1em
+a.btn, button
   display: inline-block
-  font-family: 'Libre Baskeville', sans-serif
+  font-family: Rubik
+  letter-spacing: 4px
+  text-transform: uppercase
+  background-color: $color3
+  border: none
+  margin-top: 20px
+  padding: 15px
+  font-size: 0.8em
   text-decoration: none
-  border-radius: 2px
+  color: $white
+  border-radius: 3px
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.2)
+  transition: 0.1s ease-in-out
+  cursor: pointer
+  &:hover
+    filter: brightness(1.1)
+    box-shadow: 0px 1px 2px rgba(0,0,0,0.4)
+
+
+footer
+  text-align: center
+  background-color: $white
+  padding: 25px 35px
+  p
+    margin-top: 20px
+    // font-size: 0.9em
+    a
+      color: $color3
+      text-decoration: none
+      &:hover
+        text-decoration: underline
 
 section#hero
-  background-image: url('/img/hero.jpg')
-  background-position: center
-  background-size: cover
-  color: white
-  padding: 25px
-  text-align: center
-  min-height: 100vh
-  display: flex
-  flex-direction: column
-  justify-content: center
-  align-items: center
-  h1
-    margin-bottom: 15px
-    font-size: 3em
-    max-width: 600px
-  h2
-    font-size: 1.1em
-    max-width: 600px
-  a
-    margin-top: 30px
+  aside.text
+    padding: 35px
+    background-color: $color2
+    h1
+      font-size: 2.6em
+      margin-bottom: 30px
+      color: $color4
+      text-transform: uppercase
+    h2
+      font-size: 1.3em
+      color: $white
+      margin-bottom: 10px
+    p
+      color: $white
+      margin-bottom: 10px
+      font-size: 1.1em
 
 section.sell
+  &:nth-of-type(odd)
+    aside.text
+      background-color: $color2
   aside.image
-    height: 300px
+    height: 270px
     background-position: center
     background-size: cover
   aside.text
-    padding: 25px
-    background-color: $green2
-    color: white
+    background-color: $color1
+    padding: 35px
     h3
-      font-size: 1.7em
-      // margin-bottom: 7px
+      text-transform: uppercase
+      color: $color4
+      font-size: 1.5em
+      margin-bottom: 10px
     p
-      margin-top: 12px
+      color: $white
+      font-size: 1.1em
+      margin-bottom: 10px
 
 section#tickets
-  background-color: $green1
-  color: $dark
-  padding: 25px
-  text-align: center
+  background-color: $color2
+  padding: 35px
+  color: $white
   h3
-    font-size: 1.7em
+    color: $color4
+    text-transform: uppercase
+    margin-bottom: 20px
+    font-size: 2.3em
+    max-width: 400px
+    margin: 0px auto 20px auto
   p
-    margin-top: 12px
+    font-family: $p-stack
+    color: $white
+    font-size: 1.1em
+    margin-bottom: 10px
+    max-width: 400px
+    margin: 0px auto 10px auto
+  form
+    max-width: 400px
+    margin: 20px auto
+    text-align: left
+    background-color: rgba(255,255,255,0.1)
+    padding: 20px
+    border-radius: 3px
+    position: relative
+    span#info
+      position: absolute
+      right: 20px
+      bottom: 20px
+      font-size: 0.8em
+      font-family: $p-stack
+      opacity: 0.3
+      a
+        color: $white
+    label
+      font-family: $p-stack
+      font-size: 0.9em
+    input
+      width: 100%
+      padding: 5px
+      border: 0.5px solid $white
+      border-radius: 3px
+      background-color: rgba(0,0,0,0)
+      margin-top: 3px
+      margin-bottom: 15px
+      color: $white
+      font-family: $p-stack
+      font-size: 1em
+    .StripeElement
+      width: 100%
+      padding: 7px
+      border: 0.5px solid $white
+      background-color: $white
+      border-radius: 3px
+      margin-top: 3px
+      margin-bottom: 10px
+      font-family: $p-stack
+      font-size: 1em
 
-footer
-  background-color: $dark
-  color: $light
-  padding: 25px
-  text-align: center
-  a
-    color: $light
+section.order-status
+  background-color: $color2
+  padding: 50px 35px
+  div.inner
+    max-width: 500px
+    padding: 20px
+    background-color: rgba(255,255,255,0.1)
+    border-radius: 3px
+    margin: 20px auto
+  h1
+    color: $white
+    text-transform: uppercase
+    margin-bottom: 10px
+    font-size: 2em
+  h2
+    color: $color3
+    text-transform: uppercase
+    margin-bottom: 20px
+  p
+    color: $white
+    margin-bottom: 10px
+    a
+      color: $color3
+      text-decoration: none
+      &:hover
+        text-decoration: underline
 
+section#orders
+  font-family: $p-stack
+  margin: 20px
+  h1
+    font-size: 2.5em
+    margin-bottom: 10px
+  h2
+    font-size: 1.5em
+    margin-bottom: 30px
 
-@media screen and (min-width: 600px)
-  section.sell
+  ul.labels
     display: flex
     flex-direction: row
-    &:nth-of-type(odd)
-      aside.text
-        text-align: right
-        order: -1
-        background-color: $dark
+    font-family: $h-stack
+    color: $color2
+    li
+      width: 25%
+      font-weight: 700
+  ul.orders
+    ul
+      display: flex
+      flex-direction: row
+      padding: 10px 0px
+      &:hover
+        background-color: rgba(0,0,0,0.05)
+
+      li
+        width: 25%
+
+
+@media screen and (min-width: 700px)
+  section#hero
+    display: flex
+    flex-direction: row
     aside
       width: 50%
-      // flex: 1
+      height: 100vh
       &.image
-        height: 0
-        padding-bottom: 50%
+        background-position: center
+        background-size: cover
       &.text
+        padding: 45px
         display: flex
         flex-direction: column
         justify-content: center
+        align-items: flex-start
 
-
-@media screen and (min-width: 800px)
   section#tickets
-    padding: 40px
+    h3, p
+      text-align: center
+    form
+      p
+        text-align: left
+
   section.sell
-    aside.text
-      padding: 40px
-      h3
-        font-size: 2.5em
-        margin-bottom: 10px
+    display: flex
+    flex-direction: row
+    &:nth-of-type(even)
+      aside.image
+        order: 2
+      aside.text
+        h3, p
+          margin-left: auto
+          text-align: right
+    aside
+      width: 50%
+      &.image
+        min-height: 350px
+      &.text
+        padding: 45px
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: flex-start

@@ -5,99 +5,233 @@
   list-style-type: none; }
 
 h1, h2, h3, h4, h5 {
-  font-family: "Roboto", serif; }
+  font-family: Rubik, sans-serif;
+  color: #3d5a6c; }
 
 p {
-  font-family: "Cabin", sans-serif; }
+  font-family: Abel, sans-serif;
+  color: #433a3f; }
 
-a.btn {
-  background-color: #6e9075;
-  color: white;
-  padding: 20px;
-  font-size: 1.1em;
+a.btn, button {
   display: inline-block;
-  font-family: "Libre Baskeville", sans-serif;
+  font-family: Rubik;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  background-color: #72a98f;
+  border: none;
+  margin-top: 20px;
+  padding: 15px;
+  font-size: 0.8em;
   text-decoration: none;
-  border-radius: 2px; }
+  color: #efefef;
+  border-radius: 3px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  transition: 0.1s ease-in-out;
+  cursor: pointer; }
+  a.btn:hover, button:hover {
+    filter: brightness(1.1);
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.4); }
 
-section#hero {
-  background-image: url("/img/hero.jpg");
-  background-position: center;
-  background-size: cover;
-  color: white;
-  padding: 25px;
+footer {
   text-align: center;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center; }
-  section#hero h1 {
-    margin-bottom: 15px;
-    font-size: 3em;
-    max-width: 600px; }
-  section#hero h2 {
-    font-size: 1.1em;
-    max-width: 600px; }
-  section#hero a {
-    margin-top: 30px; }
+  background-color: #efefef;
+  padding: 25px 35px; }
+  footer p {
+    margin-top: 20px; }
+    footer p a {
+      color: #72a98f;
+      text-decoration: none; }
+      footer p a:hover {
+        text-decoration: underline; }
 
+section#hero aside.text {
+  padding: 35px;
+  background-color: #3d5a6c; }
+  section#hero aside.text h1 {
+    font-size: 2.6em;
+    margin-bottom: 30px;
+    color: #8de969;
+    text-transform: uppercase; }
+  section#hero aside.text h2 {
+    font-size: 1.3em;
+    color: #efefef;
+    margin-bottom: 10px; }
+  section#hero aside.text p {
+    color: #efefef;
+    margin-bottom: 10px;
+    font-size: 1.1em; }
+
+section.sell:nth-of-type(odd) aside.text {
+  background-color: #3d5a6c; }
 section.sell aside.image {
-  height: 300px;
+  height: 270px;
   background-position: center;
   background-size: cover; }
 section.sell aside.text {
-  padding: 25px;
-  background-color: #78c091;
-  color: white; }
+  background-color: #433a3f;
+  padding: 35px; }
   section.sell aside.text h3 {
-    font-size: 1.7em; }
+    text-transform: uppercase;
+    color: #8de969;
+    font-size: 1.5em;
+    margin-bottom: 10px; }
   section.sell aside.text p {
-    margin-top: 12px; }
+    color: #efefef;
+    font-size: 1.1em;
+    margin-bottom: 10px; }
 
 section#tickets {
-  background-color: #a2e3c4;
-  color: #373f47;
-  padding: 25px;
-  text-align: center; }
+  background-color: #3d5a6c;
+  padding: 35px;
+  color: #efefef; }
   section#tickets h3 {
-    font-size: 1.7em; }
+    color: #8de969;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    font-size: 2.3em;
+    max-width: 400px;
+    margin: 0px auto 20px auto; }
   section#tickets p {
-    margin-top: 12px; }
+    font-family: Abel, sans-serif;
+    color: #efefef;
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    max-width: 400px;
+    margin: 0px auto 10px auto; }
+  section#tickets form {
+    max-width: 400px;
+    margin: 20px auto;
+    text-align: left;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 3px;
+    position: relative; }
+    section#tickets form span#info {
+      position: absolute;
+      right: 20px;
+      bottom: 20px;
+      font-size: 0.8em;
+      font-family: Abel, sans-serif;
+      opacity: 0.3; }
+      section#tickets form span#info a {
+        color: #efefef; }
+    section#tickets form label {
+      font-family: Abel, sans-serif;
+      font-size: 0.9em; }
+    section#tickets form input {
+      width: 100%;
+      padding: 5px;
+      border: 0.5px solid #efefef;
+      border-radius: 3px;
+      background-color: rgba(0, 0, 0, 0);
+      margin-top: 3px;
+      margin-bottom: 15px;
+      color: #efefef;
+      font-family: Abel, sans-serif;
+      font-size: 1em; }
+    section#tickets form .StripeElement {
+      width: 100%;
+      padding: 7px;
+      border: 0.5px solid #efefef;
+      background-color: #efefef;
+      border-radius: 3px;
+      margin-top: 3px;
+      margin-bottom: 10px;
+      font-family: Abel, sans-serif;
+      font-size: 1em; }
 
-footer {
-  background-color: #373f47;
-  color: #f0f7f4;
-  padding: 25px;
-  text-align: center; }
-  footer a {
-    color: #f0f7f4; }
+section.order-status {
+  background-color: #3d5a6c;
+  padding: 50px 35px; }
+  section.order-status div.inner {
+    max-width: 500px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+    margin: 20px auto; }
+  section.order-status h1 {
+    color: #efefef;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    font-size: 2em; }
+  section.order-status h2 {
+    color: #72a98f;
+    text-transform: uppercase;
+    margin-bottom: 20px; }
+  section.order-status p {
+    color: #efefef;
+    margin-bottom: 10px; }
+    section.order-status p a {
+      color: #72a98f;
+      text-decoration: none; }
+      section.order-status p a:hover {
+        text-decoration: underline; }
 
-@media screen and (min-width: 600px) {
+section#orders {
+  font-family: Abel, sans-serif;
+  margin: 20px; }
+  section#orders h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px; }
+  section#orders h2 {
+    font-size: 1.5em;
+    margin-bottom: 30px; }
+  section#orders ul.labels {
+    display: flex;
+    flex-direction: row;
+    font-family: Rubik, sans-serif;
+    color: #3d5a6c; }
+    section#orders ul.labels li {
+      width: 25%;
+      font-weight: 700; }
+  section#orders ul.orders ul {
+    display: flex;
+    flex-direction: row;
+    padding: 10px 0px; }
+    section#orders ul.orders ul:hover {
+      background-color: rgba(0, 0, 0, 0.05); }
+    section#orders ul.orders ul li {
+      width: 25%; }
+
+@media screen and (min-width: 700px) {
+  section#hero {
+    display: flex;
+    flex-direction: row; }
+    section#hero aside {
+      width: 50%;
+      height: 100vh; }
+      section#hero aside.image {
+        background-position: center;
+        background-size: cover; }
+      section#hero aside.text {
+        padding: 45px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start; }
+
+  section#tickets h3, section#tickets p {
+    text-align: center; }
+  section#tickets form p {
+    text-align: left; }
+
   section.sell {
     display: flex;
     flex-direction: row; }
-    section.sell:nth-of-type(odd) aside.text {
-      text-align: right;
-      order: -1;
-      background-color: #373f47; }
+    section.sell:nth-of-type(even) aside.image {
+      order: 2; }
+    section.sell:nth-of-type(even) aside.text h3, section.sell:nth-of-type(even) aside.text p {
+      margin-left: auto;
+      text-align: right; }
     section.sell aside {
       width: 50%; }
       section.sell aside.image {
-        height: 0;
-        padding-bottom: 50%; }
+        min-height: 350px; }
       section.sell aside.text {
+        padding: 45px;
         display: flex;
         flex-direction: column;
-        justify-content: center; } }
-@media screen and (min-width: 800px) {
-  section#tickets {
-    padding: 40px; }
-
-  section.sell aside.text {
-    padding: 40px; }
-    section.sell aside.text h3 {
-      font-size: 2.5em;
-      margin-bottom: 10px; } }
+        justify-content: center;
+        align-items: flex-start; } }
 
 /*# sourceMappingURL=style.css.map */

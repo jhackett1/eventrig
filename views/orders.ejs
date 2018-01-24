@@ -1,0 +1,28 @@
+<% include header %>
+
+<section id="orders">
+  <h1>Orders</h1>
+  <h2>The most recent 100 processed orders, from most recent</h2>
+  <% if(charges){ %>
+    <ul class="labels">
+      <li>Order #</li>
+      <li>Purchaser email</li>
+      <li>Quantity</li>
+      <li>Amount paid (p)</li>
+    </ul>
+    <ul class="orders">
+      <% for (var i = 0; i < charges.length; i++) { %>
+        <li>
+          <ul>
+            <li><%= charges[i].order %></li>
+            <li><%= charges[i].email %></li>
+            <li><%= charges[i].quantity %></li>
+            <li><%= charges[i].amount %></li>
+          </ul>
+        </li>
+      <% } %>
+    </ul>
+  <% } else { %>
+    <p>There are no orders yet.</p>
+  <%} %>
+</section>

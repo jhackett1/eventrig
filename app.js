@@ -4,12 +4,20 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var basicAuth = require('express-basic-auth')
 
 // Get routers
 var routes = require('./routes/routes');
 
 // Initialize express
 var app = express();
+
+// auth
+app.use('/orders', basicAuth({
+    users: { process.env.ADMIN_USER: process.env.ADMIN_PASS },
+    challenge: true,
+    realm: 'Imb4T3st4pp'
+}))
 
 // View engine
 app.set('views', path.join(__dirname, 'views'));
