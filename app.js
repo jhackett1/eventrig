@@ -14,7 +14,7 @@ var app = express();
 
 // auth
 app.use('/orders', basicAuth({
-    users: { process.env.ADMIN_USER: process.env.ADMIN_PASS },
+    users: { [process.env.ADMIN_USER]: process.env.ADMIN_PASS },
     challenge: true,
     realm: 'Imb4T3st4pp'
 }))

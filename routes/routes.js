@@ -1,6 +1,9 @@
 var express = require('express');
 var router = express.Router();
 var simpleid = require('simpleid');
+var json2csv = require('json2csv');
+var fs = require('fs');
+
 const sgMail = require('@sendgrid/mail');
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
@@ -24,11 +27,17 @@ router.get('/orders', function(req, res, next){
         order: charge.metadata.orderNumber,
         amount: charge.amount,
         email: charge.metadata.email,
-        quantity: charge.metadata.quantity,
-        cardNo: charge.source.last4
+        quantity: charge.metadata.quantity
       }
     })
-    res.render('orders', {charges: data})
+    res.render('orders', {charges: data});
+    // Create a CSV
+    var fields = ['order', 'amount', 'email', 'quantity'];
+    var csv = json2csv({ data: data, fields: fields});
+    fs.writeFile('./public/orders.csv', csv, function(err) {
+      if (err) console.log(err);
+      console.log('file saved');
+    });
   });
 });
 
