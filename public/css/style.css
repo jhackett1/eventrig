@@ -56,7 +56,11 @@ section#hero aside.text {
     font-size: 2.6em;
     margin-bottom: 30px;
     color: #8de969;
-    text-transform: uppercase; }
+    text-transform: uppercase;
+    word-wrap: break-word;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto; }
   section#hero aside.text h2 {
     font-size: 1.3em;
     color: #efefef;
@@ -125,7 +129,7 @@ section#tickets {
     section#tickets form label {
       font-family: Abel, sans-serif;
       font-size: 0.9em; }
-    section#tickets form input {
+    section#tickets form input, section#tickets form select {
       width: 100%;
       padding: 5px;
       border: 0.5px solid #efefef;
